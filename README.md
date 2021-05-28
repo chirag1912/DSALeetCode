@@ -1,2 +1,2 @@
 # DSALeetCode
-This Repo contains the Questions solved from Leetcode Competitive Website for Placement Prepartaion
+This Repo contains the Questions solved from Leetcode Competitive Website for Placement Preparation
