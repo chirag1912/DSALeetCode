@@ -1,0 +1,53 @@
+Given an array of integers nums.
+A pair (i,j) is called good if nums[i] == nums[j] and i < j.
+Return the number of good pairs.
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+// var numIdenticalPairs = function(nums) {
+//     let Map1=new Map();
+//     let count=0;
+//     for(let i=0;i<nums.length;i++){
+//         if(Map1.has(nums[i])){
+//             count=count+Map1.get(nums[i]);
+//             Map1.set(nums[i],);
+//         }else{
+//             Map1.set(nums[i],);
+//         }   
+//     }
+//     return count;
+// };//Cannot do it using Map as need to keep a count in second parameter how many times;
+// //the vraible has already come in there;
+
+// var numIdenticalPairs = function(nums) {
+//     let count=0;
+//     for(let i=0;i<nums.length-1;i++){
+//         for(let j=i+1;j<nums.length;j++){
+//             if(nums[j]==nums[i] && i<j){
+//                 count++;
+//             }
+//         }
+//     }
+//     return count;
+// };
+
+var numIdenticalPairs = function(nums) {
+const map = {}
+    let count = 0
+    
+    for (const number of nums) {
+        if (map[number]) {
+            console.log(number,"-BF->",map[number]);
+            count += map[number];
+            map[number] += 1;
+            console.log(number,"-AF->",map[number]);
+
+        } else {
+            map[number] = 1;
+            console.log(number,"----->",map[number]);
+        }
+    }
+    return count
+};
