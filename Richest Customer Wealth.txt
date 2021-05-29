@@ -1,0 +1,19 @@
+/**
+ * @param {number[][]} accounts
+ * @return {number}
+ */
+var maximumWealth = function(accounts) {
+    let eachArrTotal=0;
+    let TotalSum=0;
+  for(let i=0;i<accounts.length;i++){
+      for(let j=0;j<accounts[i].length;j++){
+              eachArrTotal+=accounts[i][j];
+        }
+      
+      if(eachArrTotal>TotalSum){
+            TotalSum=eachArrTotal
+        }
+      eachArrTotal=0;
+      }
+ return TotalSum;
+ }
