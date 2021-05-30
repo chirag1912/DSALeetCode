@@ -2,15 +2,23 @@ A pair (i,j) is called good if nums[i] == nums[j] and i < j.
 Return the number of good pairs.
 
 var numIdenticalPairs = function(nums) {
-    let count=0;
-    for(let i=0;i<nums.length-1;i++){
-        for(let j=i+1;j<nums.length;j++){
-            if(nums[j]==nums[i] && i<j){
-                count++;
-            }
+const map = {}
+    let count = 0
+    
+    for (let number of nums) {
+        if (map[number]) {
+            console.log(number,"-BF->",map[number]);
+            count+=map[number]
+            console.log(count);
+            map[number] += 1;
+            console.log(number,"-AF->",map[number]);
+
+        } else {
+            map[number] = 1;
+            console.log(number,map[number]);
         }
     }
-    return count;
+    return count
 };
 
 Learning: Outer loop cannot be nums.length/2 as pairs ca be after that as well;
